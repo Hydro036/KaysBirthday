@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Interactive HTML Tutor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Interactive HTML Tutor</h1>
+        <p>Pick a lesson, edit the code, run it, and check your answer.</p>
+    </header>
+
+
+    <div id="pwModal" class="modal" role="dialog" aria-modal="true">
+        <div class="modal-content">
+            <h2>Enter Password to Continue</h2>
+            <input id="pwInput" type="password" placeholder="Password" aria-label="Password">
+            <div class="modal-actions">
+                <button id="pwSubmit">Enter</button>
+            </div>
+            <div id="pwError" class="pw-error" aria-live="polite"></div>
+        </div>
+    </div>
+
+
+    <main class="layout">
+        <section class="left">
+            <label for="lessonSelect">Lesson</label>
+            <select id="lessonSelect"></select>
+            <div id="lessonDesc" class="desc"></div>
+            <button id="hintBtn" class="small">Show Hint</button>
+        </section>
+
+        <section class="center">
+            <div class="editor-header">
+                <strong>Code Editor</strong>
+                <div>
+                    <button id="runBtn">Run</button>
+                    <button id="checkBtn">Check</button>
+                </div>
+            </div>
+            <textarea id="editor" spellcheck="false"></textarea>
+        </section>
+
+        <section class="right">
+            <div class="preview-header"><strong>Preview</strong></div>
+            <iframe id="preview" sandbox="allow-scripts" title="preview"></iframe>
+            <div id="feedback" class="feedback"></div>
+        </section>
+    </main>
+
+    <template id="hintTemplate">
+        <div class="hint">
+            <h3>Hint</h3>
+            <div id="hintContent"></div>
+            <button id="closeHint">Close</button>
+        </div>
+    </template>
+
+    <script src="tutorial.js"></script>
+</body>
+</html>

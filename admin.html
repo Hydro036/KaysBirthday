@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="adminApp" class="admin-app">
+    <h1>Admin Page</h1>
+    <p id="adminMsg">Admin controls.</p>
+    <div id="adminControls" style="display:none">
+      <button id="refreshBtn" style="background-color: rgb(201, 210, 185);border-radius: 5px;padding: 10px 20px;margin-left: 1170px;">Refresh Logs</button>
+    </div>
+  </div>
+
+
+  <div id="adminPwModal" class="modal" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <h2>Admin Access</h2>
+      <p>Enter admin password to continue.</p>
+      <input id="adminPwInput" type="password" placeholder="Admin password" aria-label="Admin password">
+      <div class="modal-actions">
+        <button id="adminPwSubmit">Enter</button>
+      </div>
+      <div id="adminPwError" class="pw-error" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
